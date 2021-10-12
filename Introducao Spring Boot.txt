@@ -1,8 +1,19 @@
 Resources:
 Acesso a dados por meio dos recursos.Explica cada um dos recursos que sua aplicação
-vai utilizar. Resolve as dependencias de objetos para vc.(Para funcionar temos que 
-colocar o @Component no Repository.
+vai utilizar. 
+
+@Autowired
+Resolve as dependencias de objetos para vc(Injeção de dependencias,Para funcionar 
+temos que  colocar o @Component no Repository. Ou seja, Sempre que intanciar um 
+...Resource vc vai ter uma instancia do ...Repository à sua disposição também.
 
 Repository:
 Classe especial que acessa os dados,vai manipular os dados referente aquela entidade
 (inserir, atualizar , buscar dados de Categoria por exemplo.)
+
+exemplo de url's úteis:
+http://localhost:8080/users/page?page=1 (Vai levar a pagina 1) Padrao 20 por pagina
+http://localhost:8080/users/page=0&size=12 (Vai limitar a quantidade para 12 por pagina
+http://localhost:8080/users/page=0&size=12&sort=name (ordenar por nome tambem)
+http://localhost:8080/users/page=0&size=12&sort=name,asc (ordenar por nome crescente)
+http://localhost:8080/users/page=0&size=12&sort=name,desc(ordenar por nome decrescente)

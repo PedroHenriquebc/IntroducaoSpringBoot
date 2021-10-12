@@ -1,9 +1,10 @@
 package com.introducaospring.projetospring.resources;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,5 +31,11 @@ public class CategoryResource {
 	public ResponseEntity<Category> findById(@PathVariable Long id) { //para retornar um unico objeto passando o ID dele
 		Category cat = categoryRepository.findById(id).get();
 		return ResponseEntity.ok().body(cat);
+	}
+	
+	@GetMapping(value = "/page")
+	public ResponseEntity<Page<Category>> findAll(Pageable pageable){
+		Page<Category> result = categoryRepository.findAll(pageable);
+		return ResponseEntity.ok(result);
 	}
 }
