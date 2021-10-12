@@ -28,7 +28,7 @@ public class CategoryResource {
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id) { //para retornar um unico objeto passando o ID dele
-		Category cat = categoryRepository.findById(id);
+		Category cat = categoryRepository.findById(id).get();
 		return ResponseEntity.ok().body(cat);
 	}
 }
