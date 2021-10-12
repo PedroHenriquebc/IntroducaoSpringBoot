@@ -1,0 +1,8 @@
+Resources:
+Acesso a dados por meio dos recursos.Explica cada um dos recursos que sua aplicação
+vai utilizar. Resolve as dependencias de objetos para vc.(Para funcionar temos que 
+colocar o @Component no Repository.
+
+Repository:
+Classe especial que acessa os dados,vai manipular os dados referente aquela entidade
+(inserir, atualizar , buscar dados de Categoria por exemplo.)
